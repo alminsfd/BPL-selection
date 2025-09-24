@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 import user from '../assets/user1.png'
 import flag from '../assets/report1.png'
-const Player = ({player}) => {
+const Player = ({player,setAvailablebalance,availabalance,buyPlayer,setBuyPlayer}) => {
 
  const [isSelected,setIsSelected]=useState(false)
 
     const selectionBtn=()=>{
         setIsSelected(true)
+    }
+
+    
+    let lostMoney=(player)=>{
+        let money=player.price.split("USD").join("").split(",").join("")
+        if(availabalance>money){
+        selectionBtn()
+        setAvailablebalance(availabalance-Number(money))
+        setBuyPlayer([...buyPlayer,player])
+        // console.log(buyPlayer)
+
+        }else{
+            alert("Not enough money")
+            return
+
+        }
+
+       
     }
 
     return (
@@ -42,7 +60,9 @@ const Player = ({player}) => {
 
                             <div className="flex justify-between mx-2 items-center my-3">
                                 <span className='font-bold text-lg' >Price:${player.price }</span>
-                                <button   disabled={isSelected} onClick={selectionBtn} className="btn text-base ">{isSelected===true?'Selected':'Choose Player'}</button>
+                                <button   disabled={isSelected} onClick={()=>{
+                                    lostMoney(player)
+                                }} className="btn text-base ">{isSelected===true?'Selected':'Choose Player'}</button>
                             </div>
                         </div>
                     </div>

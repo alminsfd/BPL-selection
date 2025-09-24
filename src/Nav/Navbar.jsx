@@ -2,7 +2,7 @@
 import logo from '../assets/logo.png'
 import curncey from '../assets/Currency.png'
 
-const Navbar = () => {
+const Navbar = ({availabalance}) => {
     return (
         <div>
         <div className="navbar  mx-auto max-w-7xl">
@@ -14,7 +14,7 @@ const Navbar = () => {
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Home</a></li>
+            <li><a>Home</a></li>
             <li><a>Fixture</a></li>
             <li><a>Teams</a></li>
             <li><a>Schedules</a></li>
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div className="navbar-end">
           <a className="btn">
             <img src={curncey} alt="" />
-          <span>6000000000<span> coin</span></span></a>
+          <span> {availabalance} <span> coin</span></span></a>
         </div>
       </div>
         </div>
