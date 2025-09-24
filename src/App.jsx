@@ -1,7 +1,7 @@
 
 import './App.css'
-import logo from './assets/logo.png'
-import curncey from './assets/Currency.png'
+import Navbar from './Nav/Navbar'
+
 
 function App() {
 
@@ -9,41 +9,15 @@ function App() {
   return (
     <>
     {/* navbar */}
-      <div className="navbar bg-base-100 shadow-sm  mx-auto max-w-7xl">
-        <div className="navbar-start  container mx-auto ">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-              <li><a>Home</a></li>
-            <li><a>Fixture</a></li>
-            <li><a>Teams</a></li>
-            <li><a>Schedules</a></li>
-            </ul>
-          </div>
-          <a className=" text-xl">
-            <img className='w-[60px] h-[60px]' src={logo} alt="" />
-          </a>
-        </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li><a>Home</a></li>
-            <li><a>Fixture</a></li>
-            <li><a>Teams</a></li>
-            <li><a>Schedules</a></li>
-          </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">
-            <img src={curncey} alt="" />
-          <span>6000000000<span> coin</span></span></a>
-        </div>
-      </div>
-
-
+      <Navbar></Navbar>
+   {/* Banner Part */}
+   <section className='Banner_section mx-auto max-w-7xl bg-black md:p-30 p-15 mt-5 md:rounded-2xl  '>
+  <h2 className='text-center text-white md:text-3xl text-xl font-semibold ' >Assemble Your Ultimate Dream 11 Cricket Team</h2>
+  <p className='text-center text-[#ccc] mt-4 font-medium md:text-xl text-base' >Beyond Boundaries Beyond Limits</p>
+  <div className='flex justify-center items-center mt-5' >
+  <button className=' cursor-pointer  outline-3 focus:outline-[#E7FE29] border-4 border-black  bg-[#E7FE29] md:px-4  md:py-3 p-2 ounded-2xl font-bold md:text-lg text-base rounded-2xl ' >Claim Free Credit</button>
+  </div>
+   </section>
     </>
   )
 }
