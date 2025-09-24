@@ -6,6 +6,7 @@ import Banner_design from './Banner/Banner-design'
 import Navbar from './Nav/Navbar'
 import Toggling from './Toggling/Toggling'
 import Selected from './Selected/Selected'
+  import { ToastContainer } from 'react-toastify';
 
  const playerData = async () => {
     const res = await fetch('/Json-data.json')
@@ -28,7 +29,7 @@ function App() {
   }
 
   // Balance change state
-  const [availabalance,setAvailablebalance]=useState(6000000)
+  const [availabalance,setAvailablebalance]=useState(60000000)
   // player information passing
   const [buyPlayer,setBuyPlayer]=useState([])
 
@@ -56,7 +57,7 @@ function App() {
         <Available playerPromisses={playerPromisses} availabalance={availabalance}  setAvailablebalance={setAvailablebalance} buyPlayer={buyPlayer} setBuyPlayer={setBuyPlayer} ></Available>
       </Suspense>:<Selected buyPlayer={buyPlayer} removeHandler={removeHandler} ></Selected>
       }
-      
+      <ToastContainer></ToastContainer>
     </>
   )
 }
